@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CnsaT</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/utils/utils.js"></script>
+    <script type="text/javascript" src="./js/pages/invitado/reportes.js"></script>
+    <script type="text/javascript" src="./js/pages/invitado/buscador.js"></script>
+    <script type="text/javascript" src="./js/pages/landing.js"></script>
+    <script type="text/javascript" src="./js/pages/nuevoCenso.js"></script>
+    <script type="text/javascript" src="./js/entidades/censo.js"></script>
+    <script type="text/javascript" src="./js/entidades/cencista.js"></script>
+    <script type="text/javascript" src="./js/entidades/data.js"></script>
+    <script type="text/javascript" src="./js/data/data.js"></script>
+    <script type="text/javascript" src="./js/pages/censista/reasignCensista.js"></script>
+    <script type="text/javascript" src="./js/pages/censista/login.js"></script>
+    <script type="text/javascript" src="./js/pages/censista/registro.js"></script>
+    <script type="text/javascript" src="./js/pages/censista/menu.js"></script>
+    <script type="text/javascript" src="./js/pages/censista/estadisticas.js"></script>
+    <script type="text/javascript" src="./js/pages/censista/listadoCensos.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </head>
+  <body>
+    <!-- start section inicio -->
+    <section class="section" id="landingSection">
+      <div>
+        <img src="./assets/700x410_28.png" alt="logo" width="35%" />
+      </div>
+      <span>Bienvenido a CensaT</span>
+      <p>Si sos Censista hacé click aquí:</p>
+      <div>
+        <button id="btnMenu">Registrate</button>
+        <button id="btnIngreso">Ingresar</button>
+      </div>
+      <p>Si sos Invitado hacé click aquí</p>
+      <div>
+        <button id="btnInvitado">Invitado</button>
+      </div>
+    </section>
+    <!-- end section inicio -->
+
+    <!-- star section Registro -->
+    <section class="section" id="registerSection">
+      <h1>Registrate!</h1>
+      <p>Completa los siguientes campos y genera tu número identificador.</p>
+      <div>
+        <label for="inputName">Nombre :</label>
+        <input type="text" id="inputName" />
+      </div>
+      <div>
+        <label for="">Usuario:</label>
+        <input type="text" id="inputUserName" />
+      </div>
+      <div>
+        <label for="">Constraseña: *</label>
+        <input type="text" id="inputPassword" />
+        <p class="class">
+          *Debe contener un mínimo de 5 caracteres, una mayúscula, una minúscula
+          y un número*
+        </p>
+        <p id="pValidationRegister"></p>
+      </div>
+      <div>
+        <button id="btnSendRegistro">Enviar</button>
+      </div>
+    </section>
+    <!-- end section Registro -->
+
+    <!-- start section LOGIN / INICIAR SESION -->
+    <section class="section" id="loginSection">
+      <h1>Ingresa a tu perfil</h1>
+      <div>
+        <label>Nombre de usuario:</label> <br />
+        <input type="text" id="userName" />
+      </div>
+      <div>
+        <label>Constraseña:</label><br />
+        <input type="text" id="password" /> <br />
+      </div>
+      <div id="divInicioSesion">
+        <button id="btnIniciarSesion">Ingresar</button>
+      </div>
+      <p id="pAlert"></p>
+      <div>
+        <button id="">Atrás</button>
+      </div>
+    </section>
+    <!-- end section InicioSesion -->
+
+    <!-- start section MENU -->
+    <section class="section login" id="menuSection">
+      <h1>Menu Censista</h1>
+      <div>
+        <label>Ingresar nuevo censo</label>
+        <button id="btnNuevoCenso">Ingresar</button>
+      </div>
+      <div>
+        <label>Ver listado de censos</label>
+        <button id="btnListadoCensos">Ver</button>
+      </div>
+      <div>
+        <label>Ver estadisticas</label>
+        <button id="btnEstadisticas">Ver</button>
+      </div>
+      <div>
+        <button id="btnCerrarSesion">Cerrar sesión</button>
+      </div>
+    </section>
+    <!-- end section menu -->
+
+    <!-- start section Censo -->
+    <section class="section" id="censoSection">
+      <h1>Ingresar datos</h1>
+      <h5>Completa todos los campos con tus datos.</h5>
+      <div>
+        <label>Nombre: </label>
+        <input type="text" id="nameCenso" />
+        <p id="alertNombre" class="error"></p>
+      </div>
+      <div>
+        <label>Apellido: </label>
+        <input type="text" id="lastNameCenso" />
+        <p id="alertApellido" class="error"></p>
+      </div>
+      <div>
+        <label>Edad: </label>
+        <input type="number" id="ageCenso" />
+        <p id="alertEdad" class="error"></p>
+      </div>
+      <div>
+        <label>Cédula: </label>
+        <input type="text" id="cedulaCenso" />
+        <p id="alertCI" class="error"></p>
+      </div>
+      <div>
+        <label>Departamento</label>
+        <select id="selectDepto">
+          <option class="option-dpto" value="">Seleccione</option>
+          <option class="option-dpto" value="Artigas">Artigas</option>
+          <option class="option-dpto" value="Canelones">Canelones</option>
+          <option class="option-dpto" value="Cerro Largo">Cerro Largo</option>
+          <option class="option-dpto" value="Colonia">Colonia</option>
+          <option class="option-dpto" value="Durazno">Durazno</option>
+          <option class="option-dpto" value="Flores">Flores</option>
+          <option class="option-dpto" value="Florida">Florida</option>
+          <option class="option-dpto" value="Lavalleja">Lavalleja</option>
+          <option class="option-dpto" value="Maldonado">Maldonado</option>
+          <option class="option-dpto" value="Montevideo">Montevideo</option>
+          <option class="option-dpto" value="Paysandú">Paysandú</option>
+          <option class="option-dpto" value="Río Negro">Río Negro</option>
+          <option class="option-dpto" value="Rivera">Rivera</option>
+          <option class="option-dpto" value="Rocha">Rocha</option>
+          <option class="option-dpto" value="Salto">Salto</option>
+          <option class="option-dpto" value="San José">San José</option>
+          <option class="option-dpto" value="Soriano">Soriano</option>
+          <option class="option-dpto" value="Tacuarembó">Tacuarembó</option>
+          <option class="option-dpto" value="Treinta y Tres">Treinta y Tres</option>
+        </select>
+        <div>
+          <p id="alertDepto" class="error"></p>
+        </div>
+      </div>
+      <div>
+        <label>Ocupación</label>
+        <select id="selectOcupa">
+          <option class="option-ocup" value="">Seleccione...</option>
+          <option class="option-ocup" value="Dependiente">Dependiente</option>
+          <option class="option-ocup" value="Independiente">Independiente</option>
+          <option class="option-ocup" value="Estudiante">Estudiante</option>
+          <option class="option-ocup" value="No Trabaja">No trabaja</option>
+        </select>
+        <div>
+          <p id="alertOcupacion" class="error"></p>
+        </div>
+      </div>
+      <div>
+        <button id="censoNuevo">Ingresar nuevo censo</button>
+      </div>
+      <div>
+        <button id="btnBackToMenu1">Atras</button>
+      </div>
+      <div>
+        <p id="pExito" class="success"></p>
+      </div>
+    </section>
+    <!-- end section Censo -->
+
+    <!-- start section listadoCensos -->
+    <section class="section" id="listSection">
+      <h1>Listado de Censos</h1>
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-hover" id="tableCensos">
+            <thead>
+              <tr>
+                <th>|Nombre y Apellido |</th>
+                <th>|Edad |</th>
+                <th>Cedula de Identidad |</th>
+                <th>Departamento |</th>
+                <th>Ocupacion |</th>
+                <th>Validar |</th>
+                <th>Reasignar |</th>
+                <th>Editar |</th>
+              </tr>
+            </thead>
+            <tbody id="listCenso"></tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <button id="btnBackToMenu2">Atras</button>
+      </div>
+    </section>
+    <!-- end section listadoCensos -->
+
+    <!-- start section estadistica -->
+    <section class="section" id="estadisticSection">
+      <h2>Información estadística</h2>
+      <div>
+        <label for="">Total de personas censadas: </label>
+        <p></p>
+      </div>
+      <div>
+        <label for="">Total de personas censadas por departamento: </label>
+        <select>
+          <option value="">Seleccione...</option>
+          <option value="Artigas">Artigas</option>
+          <option value="Canelones">Canelones</option>
+          <option value="Cerro Largo">Cerro Largo</option>
+          <option value="Colonia">Colonia</option>
+          <option value="Durazno">Durazno</option>
+          <option value="Flores">Flores</option>
+          <option value="Florida">Florida</option>
+          <option value="Lavalleja">Lavalleja</option>
+          <option value="Maldonado">Maldonado</option>
+          <option value="Montevideo">Montevideo</option>
+          <option value="Paysandú">Paysandú</option>
+          <option value="Río Negro">Río Negro</option>
+          <option value="Rivera">Rivera</option>
+          <option value="Rocha">Rocha</option>
+          <option value="Salto">Salto</option>
+          <option value="San José">San José</option>
+          <option value="Soriano">Soriano</option>
+          <option value="Tacuarembó">Tacuarembó</option>
+          <option value="Treinta y Tres">Treinta y Tres</option>
+        </select>
+        <p id="alertDepto"></p>
+      </div>
+      <div>
+        <label for="">Personas pendientes por validar: </label>
+        <p></p>
+      </div>
+      <div>
+        <label for=""
+          >Personas censadas menores y mayores por departamento:
+        </label>
+        <select>
+          <option value="">Seleccione...</option>
+          <option value="Artigas">Artigas</option>
+          <option value="Canelones">Canelones</option>
+          <option value="Cerro Largo">Cerro Largo</option>
+          <option value="Colonia">Colonia</option>
+          <option value="Durazno">Durazno</option>
+          <option value="Flores">Flores</option>
+          <option value="Florida">Florida</option>
+          <option value="Lavalleja">Lavalleja</option>
+          <option value="Maldonado">Maldonado</option>
+          <option value="Montevideo">Montevideo</option>
+          <option value="Paysandú">Paysandú</option>
+          <option value="Río Negro">Río Negro</option>
+          <option value="Rivera">Rivera</option>
+          <option value="Rocha">Rocha</option>
+          <option value="Salto">Salto</option>
+          <option value="San José">San José</option>
+          <option value="Soriano">Soriano</option>
+          <option value="Tacuarembó">Tacuarembó</option>
+          <option value="Treinta y Tres">Treinta y Tres</option>
+        </select>
+      </div>
+      <div>
+        <button id="btnBackToMenu3">Atras</button>
+      </div>
+    </section>
+    <!-- end section estadistica -->
+
+    <!-- start Invitado Section-->
+
+    <section id="invitadoSection">
+      <h1>Bienvenido Invitado</h1>
+      <p>
+        Ingrese su CI para corroborar que haya completado sus datos del censo
+        previamente
+      </p>
+      <div>
+        <input type="text" id="inputCI" placeholder="ingresar CI" />
+      </div>
+      <div>
+        <button id="searchCI">Buscar</button>
+      </div>
+      <div>
+        <button id="btnBackToLanding">Atras</button>
+      </div>
+      <div>
+        <p id="pBuscaCi" class="success"></p>
+        <p id="ciNotFound" class="error"></p>
+      </div>
+    </section>
+    <!-- end Invitado Section-->
+
+    <!-- start Lista de censistas para reasignar Section-->
+
+    <section id="listaCensitasReasignar">      
+        <h1>Lista de censitas disponibles</h1>
+        <p>Reasignar un nuevo censista.</p> 
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-hover" id="tableCensos">
+              <thead>
+                <tr>
+                  <th>Nombre |</th>
+                  <th>  ID |</th>
+                  <th>Accion </th>
+                </tr>
+              </thead>
+              <tbody id="listaCensistas"></tbody>
+            </table>
+          </div>
+        </div>
+    </section>
+
+    <!-- end Lista de censistas para reasingar Section-->
+
+    <!-- start Censo Invitado (cuando esta pre cargado)-->
+  </body>
+</html>

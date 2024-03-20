@@ -1,0 +1,133 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #6d8796;
+}
+
+#registerSection,#loginSection, #menuSection,#censoSection, #listSection, #estadisticSection, #invitadoSection, #listaCensitasReasignar   {
+    display: none;
+}
+
+
+p.error {
+    color: red;
+  }
+  
+  p.success {
+    color: green;
+  }
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#loginSection, #landingSection, #menuSection, #censoSection, #invitadoSection {
+    border: solid #000;
+    font-family: sans-serif;
+    margin-top: 15%;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 0 0 20px 0;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+
+#listSection, #estadisticSection, #listaCensitasReasignar {
+  border: solid #000;
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 15%;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 0 0 20px 0;
+  width: 70%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+#tableCensos {
+    margin: auto;
+}
+
+#registerSection { /* para dejar a un costado los bloques */
+    border: solid #000;
+    font-family: sans-serif;
+    margin-top: 15%;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    border-radius: 10px;
+    
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: large;
+    text-align: center;
+}
+
+p.class {
+    text-align: center;
+    font-size: small;
+}
+
+button {
+  background-color: #008CBA;
+  color: white;
+  border: 1px solid rgb(37, 36, 36);
+  padding: 5px 7px;
+  transition-duration: 0.4s;
+  cursor: pointer;  
+}
+button:hover {
+  background-color: white;
+  color: #008CBA;
+}
+
+div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+span {
+  display: block;
+  font-family: sans-serif;
+  font-size: large;
+  text-align: center;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 19ch;
+  margin: 0 auto;
+
+  animation: typing 2s steps(12),
+  blink .5s infinite step-end alternate;
+  overflow: hidden 
+}
+
+@keyframes typing {
+  from { width: 0 }
+}
+
+@keyframes blink {
+  50% { border-color: transparent;}
+}
+
+
+
